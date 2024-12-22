@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>PASS - Homepage</title>
+</head>
+
+<body class="bg-dark">
+    <!-- nav section start -->
+    <h1>CIBOER PASS</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-light sticky-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">TOURGUIDE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Others
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="/contact">contact</a></li>
+                            <li><a class="dropdown-item" href="gallery">gallery</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="sosmed/index.html">Sosmed</a></li>
+                            <li><a class="dropdown-item" href="paket/index.html">Pemesanan</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- nav section end -->
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../assests/HEADLINE2.jpg" class="d-block w-100" alt="tour guide image">
+                <div class="carousel-caption">
+                    <h5>Cafe Tour</h5>
+                    <p>Rasakan Kehangatan Secangkir Kopi di Tengah Harmoni Alam</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../assests/d'garden.jpg" class="d-block w-100" alt="tour guide image 2">
+                <div class="carousel-caption">
+                    <h5>Villa Tour</h5>
+                    <p>Jelajahi Keindahan dan Kenyamanan di Setiap Sudut Vila Kami</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../assests/pemandangan3.jpg" class="d-block w-100" alt="tour guide image 3">
+                <div class="carousel-caption">
+                    <h5>Glamping Tour</h5>
+                    <p>Glamping: Kemewahan Bertemu Petualangan</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- first layout start -->
+    <main class="flex-shrink-0">
+        <div class="container">
+            <form method="post" action="proses.php">
+                <div class="card mt-2">
+                    <div class="card-header bg-dark text-white">
+                        Form Pemesanan Paket Wisata
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="nama_pemesanan" class="form-label">Nama Lengkap</label>
+                            <input type="text" class="form-control" id="nama_pemesanan" name="nama_pemesanan"
+                                placeholder="Nama Lengkap Sesuai Tanda Pengenal" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hp_pemesan" class="form-label">Nomor Handphone</label>
+                            <input type="text" class="form-control" id="hp_pemesan" name="hp_pemesan"
+                                placeholder="Nomor Handphone 08..." required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="waktu_wisata" class="form-label">Waktu Mulai Perjalanan</label>
+                            <input type="date" class="form-control" id="waktu_wisata" name="waktu_wisata"
+                                placeholder="Waktu Mulai Perjalanan" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="hari_wisata" class="form-label">Hari Wisata</label>
+                            <input type="number" class="form-control" id="hari_wisata" value="1" name="hari_wisata"
+                                placeholder="Jumlah Hari Perjalanan" required>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="paket_inap" value="1" id="paket_inap">
+                                <label class="form-check-label" for="paket_inap">
+                                    Penginapan (Rp. 1.000.000)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="paket_transport" value="1"
+                                    id="paket_transport">
+                                <label class="form-check-label" for="paket_transport">
+                                    Transportasi (Rp. 1.200.000)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" name="paket_makan" value="1"
+                                    id="paket_makan">
+                                <label class="form-check-label" for="paket_makan">
+                                    Service/ Makan (Rp. 500.000)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="jumlah_peserta" class="form-label">Jumlah Peserta</label>
+                            <input type="number" class="form-control" id="jumlah_peserta" value="1" name="jumlah_peserta"
+                                placeholder="Jumlah Hari Perjalanan" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="harga" class="form-label">Harga Paket</label>
+                            <input type="number" class="form-control" id="harga" name="harga"
+                                placeholder="Harga Paket Perjalanan" readonly>
+                        </div>
+                        <div class="mb-3">
+                            <label for="total" class="form-label">Total Tagihan</label>
+                            <input type="number" class="form-control" id="total" name="total"
+                                placeholder="Total Paket Perjalanan" readonly>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <input type="submit" class="btn btn-primary" value="Simpan">
+                        <input type="reset" class="btn btn-danger" value="Ulangi">
+                    </div>
+                </div>
+                <script>
+                    //tentukan konstanta biaya masing-masing
+                    const paket_inap = 1000000;
+                    const paket_transport = 1200000;
+                    const paket_makan = 500000;
+
+                    function updateTotalCost() {
+                        //inisisi harga paket 0
+                        let totalCost = 0;
+
+                        //referensi dari checkbox
+                        const inapCheckbox = document.getElementById('paket_inap');
+                        const transportCheckbox = document.getElementById('paket_transport');
+                        const makanCheckbox = document.getElementById('paket_makan');
+
+                        //jika inap checkbox ter-check
+                        if (inapCheckbox.checked) {
+                            totalCost += paket_inap;
+                        }
+
+                        //jika transport checkbox ter-check
+                        if (transportCheckbox.checked) {
+                            totalCost += paket_transport;
+                        }
+
+                        //jika makan checkbox ter-check
+                        if (makanCheckbox.checked) {
+                            totalCost += paket_makan;
+                        }
+
+                        document.getElementById('harga').value = totalCost;
+                    }
+
+                    function updateTotal() {
+                        let TotalTagihan = 0;
+
+                        var hari_wisata = document.getElementById('hari_wisata').value;
+                        var jumlah_peserta = document.getElementById('jumlah_peserta').value;
+                        var harga = document.getElementById('harga').value;
+
+                        TotalTagihan = hari_wisata * jumlah_peserta * harga;
+
+                        document.getElementById('total').value = TotalTagihan;
+                    }
+
+                    document.getElementById('paket_inap').addEventListener('change', updateTotalCost);
+                    document.getElementById('paket_transport').addEventListener('change', updateTotalCost);
+                    document.getElementById('paket_makan').addEventListener('change', updateTotalCost);
+
+                    document.getElementById('paket_inap').addEventListener('change', updateTotal);
+                    document.getElementById('paket_transport').addEventListener('change', updateTotal);
+                    document.getElementById('paket_makan').addEventListener('change', updateTotal);
+
+                    document.getElementById('hari_wisata').addEventListener('change', updateTotalCost);
+                    document.getElementById('jumlah_peserta').addEventListener('change', updateTotalCost);
+
+                    document.getElementById('hari_wisata').addEventListener('change', updateTotal);
+                    document.getElementById('jumlah_peserta').addEventListener('change', updateTotal);
+
+                    updateTotalCost();
+                    updateTotal();
+                </script>
+        </div>
+    </main>
+
+    <!-- first layout end -->
+
+    <div class="container">
+        <footer class="row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top">
+            <div class="col mb-3">
+                <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32">
+                        <use xlink:href="#bootstrap" />
+                    </svg>
+                </a>
+                <p class="text-muted">&copy; 2024</p>
+            </div>
+    
+            <div class="col mb-3">
+    
+            </div>
+    
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Get out and discover the villas and cozy lodging of your next destination!</a></li>
+                 </ul>
+            </div>
+    
+            <div class="col mb-3">
+                <h5>Section</h5>
+                <ul class="nav flex-column">
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Contact</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Katalog</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Sosmed</a></li>
+                    <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
+                </ul>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
