@@ -66,7 +66,7 @@
               <h4 class="mb-0">Form Pemesanan Paket Wisata</h4>
             </div>
             <div class="card-body">
-              <form method="post" action="proses.php">
+              <form method="post" action="logic/proses.php" autocomplete="off">
                 <div class="mb-3">
                   <label for="nama_pemesanan" class="form-label"
                     >Nama Lengkap</label
