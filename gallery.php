@@ -1,3 +1,6 @@
+<?php 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -157,55 +160,7 @@
   </head>
   <body>
     <!-- Navbar -->
-    <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#" aria-label="CIBOER PASS Homepage">
-            <div class="row justify-content-center align-items-center">
-              <div class="col">
-                <img src="assets/logo.png" alt="CIBOER PASS Logo" height="40" loading="lazy" />
-              </div>
-              <div class="col">
-                <h5 class="mb-0">CIBOER PASS</h5>
-              </div>
-            </div>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-controls="navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#home">Beranda</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#services">Layanan</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="index.html#about">Tentang</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contact">Kontak</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="gallery.html">Galeri</a>
-              </li>
-              <li class="nav-item"></li>
-                <a class="nav-link" href="kupon.html">Kupon</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
+   <?php include "partials/navbar.php" ?>
 
     <!-- Gallery Section -->
     <div class="container my-5 pt-4">
@@ -227,109 +182,9 @@
         <!-- Gallery items will be loaded dynamically -->
       </div>
     </div>
-
-    
-      <section id="contact" class="bg-dark text-light py-5">
-        <div class="container">
-          <h2 class="text-center mb-4">Hubungi Kami</h2>
-          <p class="text-center mb-5">
-            Kami senang mendengar dari Anda! Jangan ragu untuk menghubungi kami
-            melalui formulir di bawah ini atau media sosial kami.
-          </p>
-          <div class="row">
-            <div class="col-md-6 mb-4">
-              <h5 class="mb-3">Informasi Kontak</h5>
-              <p>
-                <i class="fas fa-map-marker-alt me-2"></i>
-                Jl.Ciboer, Desa Bantaragung, Sindangwangi, Majalengka, Jawa
-                Barat
-              </p>
-              <p>
-                <i class="fas fa-envelope me-2"></i>
-                <a href="mailto:info@ciboerpass.com" class="text-light"
-                  >info@ciboerpass.com</a
-                >
-              </p>
-              <p>
-                <i class="fas fa-phone me-2"></i>
-                <a href="tel:+62222334455" class="text-light"
-                  >+62 857 9472 7338</a
-                >
-              </p>
-              <div class="social-links">
-                <a href="#" class="text-light me-3"
-                  ><i class="fab fa-instagram"></i
-                ></a>
-                <a href="#" class="text-light me-3"
-                  ><i class="fab fa-facebook"></i
-                ></a>
-                <a href="#" class="text-light"
-                  ><i class="fab fa-twitter"></i
-                ></a>
-              </div>
-            </div>
-            <div class="col-md-6">
-              <h5 class="mb-3">Formulir Kontak</h5>
-              <form>
-                <div class="mb-3">
-                  <label for="name" class="form-label">Nama Lengkap</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="name"
-                    placeholder="Masukkan nama Anda"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="Masukkan email Anda"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="message" class="form-label">Pesan</label>
-                  <textarea
-                    class="form-control"
-                    id="message"
-                    rows="4"
-                    placeholder="Tuliskan pesan Anda di sini"
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn btn-warning">Kirim</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
     </main>
-
-    <footer class="bg-dark text-light py-4">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-12">
-            <p>&copy; 2024 CIBOER PASS. All Rights Reserved.</p>
-            <div class="social-links">
-              <a href="#" class="text-light mx-2"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <a href="#" class="text-light mx-2"
-                ><i class="fab fa-facebook"></i
-              ></a>
-              <a href="#" class="text-light mx-2"
-                ><i class="fab fa-twitter"></i
-              ></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
+    
+    <?php include "partials/footer.php" ?>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

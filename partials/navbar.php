@@ -30,22 +30,25 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
-                <a class="nav-link" href="index.html#home">Beranda</a>
+                <a class="nav-link" href="index.php#home">Beranda</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#services">Layanan</a>
+                <a class="nav-link" href="index.php#services">Layanan</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="index.html#about">Tentang</a>
+                <a class="nav-link" href="index.php#about">Tentang</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#contact">Kontak</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link active" href="gallery.html">Galeri</a>
+                <a class="nav-link" href="gallery.php">Galeri</a>
               </li>
               <li class="nav-item"></li>
-                <a class="nav-link" href="kupon.html">Kupon</a>
+                <a class="nav-link" href="kupon.php">Kupon</a>
+              </li>
+              <li class="nav-item"></li>
+                <a href="paket.php" class="nav-link">Pesan Sekarang</a>
               </li>
             </ul>
           </div>
