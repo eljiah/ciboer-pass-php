@@ -56,7 +56,27 @@
   </head>
 
   <body>
-    <?php include "partials/navbar.php" ?>
+    <?php 
+    ob_start();
+    session_start();
+    include "logic/koneksi.php";
+    include "logic/functions.php";
+    
+    // Cek apakah user sudah login
+    if(!isset($_SESSION['user_id'])) {
+      header("Location: login.php");
+      exit();
+    }
+
+    // Ambil data user dari database menggunakan fungsi
+    $user = getUserData($_SESSION['user_id']);
+    if(!$user) {
+      header("Location: login.php"); 
+      exit();
+    }
+
+    include "partials/navbar.php";
+    ?>
 
     <main class="container py-5 mt-5">
       <div class="row justify-content-center">
@@ -67,6 +87,7 @@
             </div>
             <div class="card-body">
               <form method="post" action="logic/proses.php" autocomplete="off">
+                <input type="hidden" name="user_id" value="<?php echo htmlspecialchars($_SESSION['user_id']); ?>">
                 <div class="mb-3">
                   <label for="nama_pemesanan" class="form-label"
                     >Nama Lengkap</label
@@ -77,6 +98,7 @@
                     id="nama_pemesanan"
                     name="nama_pemesanan"
                     placeholder="Nama Lengkap Sesuai Tanda Pengenal"
+                    value="<?php echo htmlspecialchars($user['nama']); ?>"
                     required
                   />
                 </div>
@@ -90,6 +112,7 @@
                     id="hp_pemesan"
                     name="hp_pemesan"
                     placeholder="Nomor Handphone (contoh: 08xxxxxxxxxx)"
+                    value="<?php echo htmlspecialchars($user['no_hp']); ?>"
                     required
                   />
                 </div>

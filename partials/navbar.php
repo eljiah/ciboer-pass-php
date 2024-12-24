@@ -50,6 +50,21 @@
               <li class="nav-item"></li>
                 <a href="paket.php" class="nav-link">Pesan Sekarang</a>
               </li>
+              <?php if(isset($_SESSION['user_id'])): ?>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <?php echo $_SESSION['nama']; ?>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                    <li><a class="dropdown-item" href="detail-pemesanan.php">Detail Pemesanan</a></li>
+                    <li><a class="dropdown-item" href="login.php?logout=true">Logout</a></li>
+                  </ul>
+                </li>
+              <?php else: ?>
+                <li class="nav-item">
+                  <a class="nav-link" href="login.php">Login</a>
+                </li>
+              <?php endif; ?>
             </ul>
           </div>
         </div>

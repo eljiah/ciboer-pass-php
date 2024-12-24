@@ -1,5 +1,5 @@
 <?php
-include 'database/koneksi.php';
+include 'logic/koneksi.php';
 ?>
 <!DOCTYPE html>
 <html lang="id">
