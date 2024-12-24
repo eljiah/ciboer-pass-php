@@ -17,16 +17,16 @@ $dataPemesanan = getPemesananData($user_id);
 // Tangkap aksi hapus pemesanan
 if (isset($_POST['hapus'])) {
     $id_pemesanan = $_POST['hapus'];
-    
+
     // Panggil fungsi hapusPemesanan
     $hasil = hapusPemesanan($id_pemesanan);
-    
+
     if ($hasil) {
         $_SESSION['success'] = "Pemesanan berhasil dihapus";
     } else {
         $_SESSION['error'] = "Gagal menghapus pemesanan";
     }
-    
+
     // Redirect kembali ke halaman detail pemesanan
     header("Location: detail-pemesanan.php");
     exit;
@@ -36,6 +36,7 @@ if (isset($_POST['hapus'])) {
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,16 +49,18 @@ if (isset($_POST['hapus'])) {
             border: none;
             box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         }
+
         .card-header {
             background-color: #ffc107 !important;
             color: #000 !important;
         }
     </style>
 </head>
+
 <body class="bg-light">
     <?php include "partials/navbar.php"; ?>
-    
-    <div class="container overflow-hidden" style="margin: 0 5rem;">
+
+    <div class="container overflow-hidden" style="margin-top: 5rem; margin-bottom: 5rem;">
         <div class="row justify-content-center my-5">
             <div class="col">
                 <div class="card shadow">
@@ -65,6 +68,21 @@ if (isset($_POST['hapus'])) {
                         <h2 class="text-center mb-0">Detail Pemesanan Anda</h2>
                     </div>
                     <div class="card-body p-4">
+                        <?php if (isset($_SESSION['success'])): ?>
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <?= $_SESSION['success'] ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <?php unset($_SESSION['success']); ?>
+                        <?php endif; ?>
+
+                        <?php if (isset($_SESSION['error'])): ?>
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <?= $_SESSION['error'] ?>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                            <?php unset($_SESSION['error']); ?>
+                        <?php endif; ?>
                         <div class="table-responsive">
                             <table class="table table-hover">
                                 <thead class="table-light">
@@ -95,7 +113,7 @@ if (isset($_POST['hapus'])) {
                                                     <?php
                                                     $paket = [];
                                                     if ($row['paket'] & 1) $paket[] = "Inap";
-                                                    if ($row['paket'] & 2) $paket[] = "Transport"; 
+                                                    if ($row['paket'] & 2) $paket[] = "Transport";
                                                     if ($row['paket'] & 4) $paket[] = "Makan";
                                                     echo implode(", ", $paket);
                                                     ?>
@@ -128,21 +146,6 @@ if (isset($_POST['hapus'])) {
                             </a>
                         </div>
 
-                        <?php if (isset($_SESSION['success'])): ?>
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <?= $_SESSION['success'] ?>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            <?php unset($_SESSION['success']); ?>
-                        <?php endif; ?>
-
-                        <?php if (isset($_SESSION['error'])): ?>
-                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                <?= $_SESSION['error'] ?>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                            </div>
-                            <?php unset($_SESSION['error']); ?>
-                        <?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -154,4 +157,5 @@ if (isset($_POST['hapus'])) {
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

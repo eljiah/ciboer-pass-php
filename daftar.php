@@ -5,24 +5,25 @@ include 'logic/functions.php';
 // Proses pendaftaran
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     $hasil = daftarUser(
-        $_POST['username'], 
+        $_POST['username'],
         $_POST['password'],
         $_POST['nama'],
-        $_POST['alamat'], 
+        $_POST['alamat'],
         $_POST['no_hp']
     );
-    if($hasil['status']) {
+    if ($hasil['status']) {
         $_SESSION['success'] = $hasil['pesan'];
         header("Location: login.php");
         exit();
     } else {
-        $error = $hasil['pesan']; 
+        $error = $hasil['pesan'];
     }
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,6 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <?php include "partials/navbar.php" ?>
     <div class="overflow-hidden" style="margin-top: 5rem;">
@@ -38,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
                 <div class="card shadow">
                     <div class="card-body p-4">
                         <h2 class="text-center mb-4">Daftar Akun</h2>
-                        
+
                         <?php if (isset($error)): ?>
                             <div class="alert alert-danger" role="alert">
                                 <?php echo $error; ?>
@@ -93,18 +95,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
 
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
+
     <script>
         function validateForm() {
             const password = document.getElementById('password').value;
             const confirmPassword = document.getElementById('confirm_password').value;
             const passwordError = document.getElementById('passwordError');
-            
+
             if (password !== confirmPassword) {
                 passwordError.style.display = 'block';
                 return false;
             }
-            
+
             passwordError.style.display = 'none';
             return true;
         }
@@ -114,7 +116,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             const password = document.getElementById('password').value;
             const confirmPassword = this.value;
             const passwordError = document.getElementById('passwordError');
-            
+
             if (password !== confirmPassword) {
                 passwordError.style.display = 'block';
             } else {
@@ -123,4 +125,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
         });
     </script>
 </body>
+
 </html>

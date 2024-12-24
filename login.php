@@ -24,6 +24,7 @@ if (isset($_GET['logout'])) {
 
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +33,7 @@ if (isset($_GET['logout'])) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
+
 <body>
     <?php include "partials/navbar.php" ?>
     <div class="container overflow-hidden" style="margin-top: 5rem;">
@@ -40,7 +42,7 @@ if (isset($_GET['logout'])) {
                 <div class="card shadow">
                     <div class="card-body p-4">
                         <h2 class="text-center mb-4">Login</h2>
-                        
+
                         <?php if (isset($error)): ?>
                             <div class="alert alert-danger" role="alert">
                                 <?php echo $error; ?>
@@ -71,4 +73,5 @@ if (isset($_GET['logout'])) {
     <!-- Bootstrap Bundle JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-    </html>
+
+</html>
